@@ -58,7 +58,17 @@ def main():
     datos_finales_p1 = pd.DataFrame({"n": values, "Time(ns)": p1})
     datos_finales_p2 = pd.DataFrame({"n": values, "Time(ns)": p2})
 
-    print("\tMetodo de Listas:\n",datos_finales_p1)
+     a1 = (datos_finales_p1["Time(ns)"]/datos_finales_p1["n"])
+    datos_finales_p1["O(n*1.5)"] = a1**1.5
+    datos_finales_p1["O(n*2)"] = a1**2
+    datos_finales_p1["O(n*2.2)"] = a1**2.2
+
+    a2 = (datos_finales_p2["Time(ns)"]/datos_finales_p2["n"])
+    datos_finales_p2["O(log2(n))"] = np.log2(a2)
+    datos_finales_p2["O(n)"] = a2
+    datos_finales_p2["O(nlog2(n))"] = a2*np.log2(a2)
+        
+    print("\tMetodo de Listas:\n",datos_finales_p1,"\n\n")
     print("\tMetodo de Conjuntos:\n", datos_finales_p2)
 
 
