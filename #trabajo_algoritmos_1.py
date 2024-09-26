@@ -10,6 +10,29 @@ import numpy as np
 
 # generar una lista de tamaño n
 def generarL(n):
+    '''
+    Genera una lista aleatoria ordenada de 
+    números enteros ordenada de tamaño n
+    y un número que sea la suma de dos de 
+    sus elementos
+
+    Parameters
+    ----------
+    n : TYPE
+        DESCRIPTION. 
+        Número de elementos de la lista
+
+    Returns
+    
+    -------
+    nums : TYPE
+        DESCRIPTION.
+        lista de números
+    target : TYPE
+        DESCRIPTION.
+        suma de dos elementos
+
+    '''
     nums = []
     valores = random.randint(1, 10)
     for i in range(n):
@@ -21,6 +44,36 @@ def generarL(n):
 
 # medir el tiempo de ejecución
 def medir_time_100(algoritmo, n):
+    '''
+    Evalúa el tiempo que tarda en ejecutarse 
+    un algoritmo dado
+    con k=100 (repeticiones por defecto)
+
+    Parameters
+    ----------
+    algoritmo : TYPE
+                func
+        DESCRIPTION.
+        Algoritmo a evaluar
+    n : TYPE
+        int
+        DESCRIPTION.
+        número de elementos que tendrá la 
+        lista con la que se evaluará el algoritmo
+
+    Returns
+    -------
+    t : TYPE
+        float
+        DESCRIPTION.
+        tiempo en el que se realizó 
+    A : TYPE
+        bool
+        DESCRIPTION.
+        si se supera el umbral de tiempo en una llamada 
+        al algoritmo es false
+
+    '''
     A = False
     t1 = time.time_ns()
     x = generarL(n)
@@ -50,6 +103,36 @@ def medir_time_100(algoritmo, n):
     return (t, A)
 
 def medir_time_1000(algoritmo, n):
+    '''
+    Evalúa el tiempo que tarda en ejecutarse 
+    un algoritmo dado
+    con k=1000 (repeticiones por defecto)
+
+    Parameters
+    ----------
+    algoritmo : TYPE
+                func
+        DESCRIPTION.
+        Algoritmo a evaluar
+    n : TYPE
+        int
+        DESCRIPTION.
+        número de elementos que tendrá la 
+        lista con la que se evaluará el algoritmo
+
+    Returns
+    -------
+    t : TYPE
+        float
+        DESCRIPTION.
+        tiempo en el que se realizó
+    A : TYPE
+        bool
+        DESCRIPTION.
+        si se supera el umbral de tiempo en una llamada 
+        al algoritmo es false
+
+    '''
     A = False
     t1 = time.time_ns()
     x = generarL(n)
@@ -79,6 +162,14 @@ def medir_time_1000(algoritmo, n):
     return (t, A)
 
 def main():
+    '''
+    Crea la tabla de las mediciones y la muestra
+
+    Returns
+    -------
+    None.
+
+    '''
     i = 0
     f1 = []
     f2 =[]
