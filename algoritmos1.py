@@ -2,10 +2,10 @@
 def searchpairswithlists(lista,target):
     pairs= []
     for i in range(len(lista)):
-        for j in range(len(lista)-i):
-            if lista[i]+lista[j+i]== target:
-                if (lista[i],lista[j+i]) not in pairs:
-                    pairs.append((lista[i],lista[j+i]))
+        for j in range(i,len(lista)):
+            if lista[i]+lista[j]== target:
+                if (lista[i],lista[j]) not in pairs:
+                    pairs.append((lista[i],lista[j]))
     return pairs
 
 
